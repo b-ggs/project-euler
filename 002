@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+sum=0
+i=1
+j=2
+
+while [[ $i -lt 4000000 ]]; do
+  k=$((i + j))
+  i=$j
+  j=$k
+
+  if [[ $((i % 2)) -eq 0 ]]; then
+    sum=$((sum + i))
+  fi
+done
+
+echo $sum
